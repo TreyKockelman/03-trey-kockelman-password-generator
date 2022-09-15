@@ -4,13 +4,19 @@ var generateBtn = document.querySelector("#generate");
 // Global variables
 var numOfCharacters;
 var useLowercaseLetters;
+var allLowercaseLetters; ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y", "z"];
 var useUppercaseLetters;
-var Numbers;
-var SpecialCharacters;
+var allUppercaseLetters; ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var numbers;
+var allNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var specialCharacters;
+var random = Math.floor(Math.random() * (max - min + 1) +min);
+var passwordRandomString = ""
 
 // Asks user how many characters they want to generate in their password?
 function howManyCharacters(){
   numOfCharacters = parseInt( prompt("How many characters?") );
+  console.log(numOfCharacters);
 }
 
 // Asks user if they want lower case letters?
@@ -27,15 +33,17 @@ function useUppercase(){
 
 // Asks user if they want to use numbers?
 function useNumbers(){
-  Numbers = confirm("Do you want numbers in the password?");
-  console.log(Numbers)
+  numbers = confirm("Do you want numbers in the password?");
+  console.log(numbers)
 }
 
 // Asks user if they want to use special characters?
 function useSpecialCharacters(){
-  SpecialCharacters = confirm("Do you want special characters in the password?");
-  console.log(SpecialCharacters)
+  specialCharacters = confirm("Do you want special characters in the password?");
+  console.log(specialCharacters)
 }
+
+// Generates a random password string from user inputs
 
 function generatePassword() {
   howManyCharacters();
@@ -46,7 +54,7 @@ function generatePassword() {
 
 
 
-  return "finalpassword"
+  return passwordRandomString();
 }
 // Write password to the #password input
 function writePassword() {
