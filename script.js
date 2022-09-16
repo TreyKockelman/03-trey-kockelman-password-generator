@@ -26,7 +26,6 @@ function howManyCharacters(){
   max = 128;
   if (numOfCharacters < min || numOfCharacters > max || numOfCharacters == NaN) {
     alert("The minimum number of characters in the password has to be 8 while the maximum is 128. Please enter a number between 8 and 128.");
-    return;
   }
 }
 
@@ -62,8 +61,8 @@ function generatePassword() {
   passwordRandomString = "";
   userPasswordPreferencesString = "";
   howManyCharacters();
-  if (numOfCharacters > 8 || numOfCharacters < 128 || numOfCharacters == NaN) {
-    return "Please enter a valid amount of characters.";
+  if (numOfCharacters < 8 || numOfCharacters > 128 || numOfCharacters == NaN) {
+    return "ERROR: Please enter a valid amount of characters.";
   }
   useLowercase();
   useUppercase();
