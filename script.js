@@ -22,6 +22,12 @@ var passwordRandomString = "";
 function howManyCharacters(){
   numOfCharacters = parseInt( prompt("How many characters?") );
   console.log(numOfCharacters);
+  min = 8;
+  max = 128;
+  if (numOfCharacters < min || numOfCharacters > max || numOfCharacters == NaN) {
+    alert("The minimum number of characters in the password has to be 8 while the maximum is 128. Please enter a number between 8 and 128.");
+    return;
+  }
 }
 
 // Asks user if they want lower case letters
@@ -56,6 +62,9 @@ function generatePassword() {
   passwordRandomString = "";
   userPasswordPreferencesString = "";
   howManyCharacters();
+  if (numOfCharacters > 8 || numOfCharacters < 128 || numOfCharacters == NaN) {
+    return "Please enter a valid amount of characters.";
+  }
   useLowercase();
   useUppercase();
   useNumbers();
