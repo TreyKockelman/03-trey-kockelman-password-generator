@@ -24,7 +24,7 @@ function howManyCharacters(){
   console.log(numOfCharacters);
   min = 8;
   max = 128;
-  if (numOfCharacters < min || numOfCharacters > max || numOfCharacters == NaN) {
+  if (numOfCharacters < min || numOfCharacters > max || Number.isNaN(numOfCharacters)) {
     alert("The minimum number of characters in the password has to be 8 while the maximum is 128. Please enter a number between 8 and 128.");
   }
 }
@@ -61,7 +61,7 @@ function generatePassword() {
   passwordRandomString = "";
   userPasswordPreferencesString = "";
   howManyCharacters();
-  if (numOfCharacters < 8 || numOfCharacters > 128 || numOfCharacters == NaN) {
+  if (numOfCharacters < 8 || numOfCharacters > 128 || Number.isNaN(numOfCharacters)) {
     return "ERROR: Please enter a valid amount of characters.";
   }
   useLowercase();
@@ -84,11 +84,14 @@ function generatePassword() {
     userPasswordPreferencesString += allSpecialCharacters;
     console.log(userPasswordPreferencesString);
   };
+  console.log(userPasswordPreferencesString.length);
+  if (userPasswordPreferencesString.length <= 0) {
+    return "ERROR: Please enter a valid preference combination for the password";
+  }
   max = userPasswordPreferencesString.length;
-  console.log(userPasswordPreferencesString.length)
   min = 0;
   for (var i = 0; i < (numOfCharacters); i++) {
-    var random = Math.floor(Math.random() * (max - min + 1) +min);
+    var random = Math.floor(Math.random() * (max - min) +min);
     passwordRandomString += userPasswordPreferencesString[random];
   };
 return passwordRandomString;
