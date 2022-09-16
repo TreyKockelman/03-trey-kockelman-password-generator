@@ -48,7 +48,7 @@ function useSpecialCharacters(){
   console.log(specialCharacters)
 }
 
-// Need to set max password length and need to set preferences from user inputs, include true statements and exclude false statements from above, need loop for 4 functions after amount of characters, want to put all arrays that have a true statement as a single string. is because userPasswordPreferencesString is a global variable and the for/if statement it is a child? //
+// Need to set max password length and need to set preferences from user inputs, include true statements and exclude false statements from above, need loop for 4 functions after amount of characters. //
 
 // Generates a random password string from user inputs
 
@@ -96,13 +96,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-
-// Variables
-// var allLowercaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y", "z"];
-// var allSpecialCharacters = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "?", ">", "<", ",", ".", "/", "=", "_", "`"];
