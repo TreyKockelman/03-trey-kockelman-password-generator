@@ -4,15 +4,17 @@ var generateBtn = document.querySelector("#generate");
 // Global variables
 var numOfCharacters;
 var useLowercaseLetters;
-var allLowercaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y", "z"];
+var allLowercaseLetters = ["abcdefghijklmnopqrstuvwxyz"];
 var useUppercaseLetters;
-var allUppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var allUppercaseLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 var numbers;
-var allNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var allNumbers = ["1234567890"];
 var specialCharacters;
-var allSpecialCharacters = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "?", ">", "<", ",", ".", "/", "=", "_", "`"];
+var allSpecialCharacters = ["~!@#$%^&*()-+?><,./=_`"];
 var min = 8;
 var max = 128;
+var userPasswordPreferencesString = "";
+var passwordElements = [useLowercaseLetters, useUppercaseLetters, numbers, specialCharacters];
 var random = Math.floor(Math.random() * (max - min + 1) +min);
 var passwordRandomString = "";
 
@@ -46,7 +48,8 @@ function useSpecialCharacters(){
   console.log(specialCharacters)
 }
 
-// Need to set max password length and need to set preferences from user inputs
+// Need to set max password length and need to set preferences from user inputs, include true statements and exclude false statements from above, need loop for 4 functions after amount of characters, want to put all arrays that have a true statement as a single string. is because userPasswordPreferencesString is a global variable and the for/if statement it is a child? //
+// for (var i = 0; i < passwordElements.length; i++){
 
 // Generates a random password string from user inputs
 
@@ -56,7 +59,24 @@ function generatePassword() {
   useUppercase();
   useNumbers();
   useSpecialCharacters();
-
+  var userPasswordPreferencesString
+  if (useLowercaseLetters === true) {
+    userPasswordPreferencesString =+ allLowercaseLetters;
+    console.log(allLowercaseLetters);
+  }
+  if (useUppercaseLetters === true) {
+    userPasswordPreferencesString =+ allLowercaseLetters;
+    console.log(allUppercaseLetters);
+  }
+  if (numbers === true) {
+    userPasswordPreferencesString =+ allLowercaseLetters;
+    console.log(allNumbers);
+  }
+  if (specialCharacters === true) {
+    userPasswordPreferencesString =+ allLowercaseLetters;
+    console.log(allSpecialCharacters);
+  }
+  console.log(userPasswordPreferencesString);
   return passwordRandomString;
 }
 
@@ -71,3 +91,13 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+
+// Variables
+// var allLowercaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y", "z"];
+// var allSpecialCharacters = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "?", ">", "<", ",", ".", "/", "=", "_", "`"];
