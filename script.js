@@ -10,7 +10,7 @@ var allUppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var numbers;
 var allNumbers = "1234567890"
 var specialCharacters;
-var allSpecialCharacters = "~!@#$%^&*()-+?><,./=_`"
+var allSpecialCharacters = " !#$%&'()*+,-./:;<=>?@[]/^_`{|}~";
 var min;
 var max;
 var userPasswordPreferencesString = "";
@@ -85,8 +85,9 @@ function generatePassword() {
     console.log(userPasswordPreferencesString);
   };
   max = userPasswordPreferencesString.length;
+  console.log(userPasswordPreferencesString.length)
   min = 0;
-  for (var i = 0; i < numOfCharacters; i++) {
+  for (var i = 0; i < (numOfCharacters); i++) {
     var random = Math.floor(Math.random() * (max - min + 1) +min);
     passwordRandomString += userPasswordPreferencesString[random];
   };
