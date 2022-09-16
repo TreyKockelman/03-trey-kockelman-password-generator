@@ -63,25 +63,25 @@ function generatePassword() {
   if (useLowercaseLetters) {
     userPasswordPreferencesString += allLowercaseLetters;
     console.log(userPasswordPreferencesString);
-  }
+  };
   if (useUppercaseLetters) {
     userPasswordPreferencesString += allUppercaseLetters;
     console.log(userPasswordPreferencesString);
-  }
+  };
   if (numbers) {
     userPasswordPreferencesString += allNumbers;
     console.log(userPasswordPreferencesString);
-  }
+  };
   if (specialCharacters) {
     userPasswordPreferencesString += allSpecialCharacters;
     console.log(userPasswordPreferencesString);
-  }
-  max = userPasswordPreferencesString.length
-  min = 0
+  };
+  max = userPasswordPreferencesString.length;
+  min = 0;
   for (var i = 0; i < numOfCharacters; i++) {
     var random = Math.floor(Math.random() * (max - min + 1) +min);
     passwordRandomString += userPasswordPreferencesString[random];
-  }
+  };
 return passwordRandomString;
 }
 
